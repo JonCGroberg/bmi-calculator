@@ -17,17 +17,17 @@
     <form id="bmiForm">
         <div>
             <label for="weight">Weight (lbs)</label>
-            <input id="weight" name="weight" type="text" />
+            <input id="weight" name="weight" type="text" required/>
         </div>
         <br />
         <label for=""> Height (in)</label>
         <div>
             <label for="feet">Feet</label>
-            <input id="feet" name="feet" type="text" />
+            <input id="feet" name="feet" type="text" require />
         </div>
         <div>
             <label for="inches">Inches</label>
-            <input id="inches" name="inches" type="text" />
+            <input id="inches" name="inches" type="text" require />
         </div>
         <br />
         <button>Calculate</button>
