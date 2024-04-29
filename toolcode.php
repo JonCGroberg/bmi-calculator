@@ -1,44 +1,50 @@
 <?php
 ?>
 
-<!-- Formula: weight (lb) / [height (in)]2 x 703 -->
-
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Calculator</title>
+    <title>Document</title>
     <script src="./bmiCalculator.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
-
-<body>
-    <form id="bmiForm">
+<div class="card shadow-sm  rounded-2 m-4 text-start mx-auto " style="max-width: 600px;">
+    <h3 class=" card-header fw-bold py-3" style="font-size: 20px;">BMI Calculator</h3>
+    <form id="bmiForm" class="card-body py-4">
         <div>
-            <label for="weight">Weight (lbs)</label>
-            <input id="weight" name="weight" type="text" required/>
+            <label class="form-label fw-bold pt-1" style="font-size: 20;" for="weight">Enter your weight (lbs)</label>
+            <input class="form-control " id="weight" name="weight" type="number" required placeholder="Pounds" />
+        </div>
+        <label for="" class="form-label fw-bold mt-4"> Enter your height (in)</label>
+        <div class="input-group ">
+            <input class="form-control" id="feet" name="feet" type="number" required placeholder="Feet" />
+            <input class="form-control " id="inches" name="inches" type="number" required placeholder="Inches" />
         </div>
         <br />
-        <label for=""> Height (in)</label>
-        <div>
-            <label for="feet">Feet</label>
-            <input id="feet" name="feet" type="text" require />
-        </div>
-        <div>
-            <label for="inches">Inches</label>
-            <input id="inches" name="inches" type="text" require />
-        </div>
-        <br />
-        <button>Calculate</button>
-        <div>
-            <br />
-            <label for="">BMI: <span id="calculatedBMI"></span></label>
+        <button class="btn btn-primary w-100 fw-medium">Calculate Your Bmi</button>
+        <div class="mt-4">
+            <label class="form-control-plaintext fw-bold " for="">Your calculated BMI: <span class="fw-bolder "
+                    id="calculatedBMI"></span></label>
         </div>
     </form>
-    <br />
+    </body>
+</div>
+<style>
+    * {
+        color: #444;
+    }
 
-</body>
+    body {
+        font-family: Arial, sans-serif;
+        font-size: 16px;
+    }
+</style>
+
+</html>
 
 <script language="javascript">
     window.onload = () => {
@@ -64,8 +70,7 @@
                 height: Number(inchesInput.value) + Number(feetInput.value) * 12
             };
 
-            calculatedBMILabel.innerText = caluculateBMI(data);
+            calculatedBMILabel.innerText = caluculateBMI(data).toFixed(2);
         };
     };
-</script>
-<html>
+    <html>
